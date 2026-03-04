@@ -1,0 +1,7 @@
+CREATE PROCEDURE DeleteTask
+(@Id INT)
+AS
+BEGIN
+	DELETE FROM dbo.TaskList
+	WHERE Id = @Id
+END

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TaskList.Crosscutting/TaskList.Crosscutting.csproj" />
+  <Project Path="TaskList.Data/TaskList.Data.csproj" />
+  <Project Path="TaskList.Domain/TaskList.Domain.csproj" />
+  <Project Path="TaskListAPI/TaskList.API.csproj" />
+</Solution>

@@ -1,0 +1,14 @@
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.AssemblyInfoInputs.cache
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.AssemblyInfo.cs
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.csproj.CoreCompileInputs.cache
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\bin\Debug\net10.0\TaskList.Crosscutting.exe
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\bin\Debug\net10.0\TaskList.Crosscutting.deps.json
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\bin\Debug\net10.0\TaskList.Crosscutting.runtimeconfig.json
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\bin\Debug\net10.0\TaskList.Crosscutting.dll
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\bin\Debug\net10.0\TaskList.Crosscutting.pdb
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.dll
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\refint\TaskList.Crosscutting.dll
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.pdb
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.genruntimeconfig.cache
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\ref\TaskList.Crosscutting.dll

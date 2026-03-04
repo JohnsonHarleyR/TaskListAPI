@@ -1,0 +1,5 @@
+CREATE PROCEDURE GetTasks
+AS
+BEGIN
+	SELECT * FROM [dbo].[TaskList];
+END

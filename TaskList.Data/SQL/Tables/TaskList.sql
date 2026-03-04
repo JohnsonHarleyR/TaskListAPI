@@ -1,0 +1,7 @@
+CREATE TABLE master.TaskList (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    CreationDate DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+    Description VARCHAR(255) NOT NULL,
+    DueDate DATE NULL,
+    IsCompleted BIT NOT NULL DEFAULT 0
+);
