@@ -29,7 +29,7 @@ namespace TaskListAPI.Controllers
             return orchestrator.AddTask(task);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public bool UpdateTask(TaskModel task)
         {
             return orchestrator.UpdateTask(task);

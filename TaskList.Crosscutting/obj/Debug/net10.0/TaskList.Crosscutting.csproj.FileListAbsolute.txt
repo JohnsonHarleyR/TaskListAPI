@@ -12,3 +12,4 @@ C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\
 C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.pdb
 C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.genruntimeconfig.cache
 C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\ref\TaskList.Crosscutting.dll
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Crosscutting\obj\Debug\net10.0\TaskList.Crosscutting.sourcelink.json

@@ -72,3 +72,4 @@ C:\Users\brian\source\repos\TaskListAPI\TaskList.Data\obj\Debug\net10.0\refint\T
 C:\Users\brian\source\repos\TaskListAPI\TaskList.Data\obj\Debug\net10.0\TaskList.Data.pdb
 C:\Users\brian\source\repos\TaskListAPI\TaskList.Data\obj\Debug\net10.0\TaskList.Data.genruntimeconfig.cache
 C:\Users\brian\source\repos\TaskListAPI\TaskList.Data\obj\Debug\net10.0\ref\TaskList.Data.dll
+C:\Users\brian\source\repos\TaskListAPI\TaskList.Data\obj\Debug\net10.0\TaskList.Data.sourcelink.json
