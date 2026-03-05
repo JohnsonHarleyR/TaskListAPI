@@ -36,5 +36,18 @@ namespace TaskList.Domain.Orchestrators
 
             return taskModels;
         }
+
+        public bool AddTask(TaskModel taskModel)
+        {
+            TaskDto taskDto = new TaskDto
+            {
+                Id = taskModel.Id,
+                CreationDate = taskModel.CreationDate,
+                Description = taskModel.Description.Trim().Length <= 255 ? taskModel.Description.Trim() : taskModel.Description.Trim().Substring(0,255),
+                DueDate = taskModel.DueDate,
+                IsCompleted = taskModel.IsCompleted
+            };
+            return repository.AddTask(taskDto);
+        }
     }
 }

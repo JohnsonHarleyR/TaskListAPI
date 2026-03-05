@@ -22,29 +22,64 @@ namespace TaskList.Data.Repositories
         {
             var tasks = new List<TaskDto>();
 
-            using var connection = new SqlConnection(ConnectionString);
-            connection.Open();
-
-            using var command = new SqlCommand("GetTasks", connection)
+            try
             {
-                CommandType = CommandType.StoredProcedure
-            };
+                using var connection = new SqlConnection(ConnectionString);
+                connection.Open();
 
-            using var reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-               var dto = new TaskDto
-               {
-                    Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                    CreationDate = reader.GetDateTime(reader.GetOrdinal("CreationDate")),
-                    Description = reader.GetString(reader.GetOrdinal("Description")),
-                    DueDate = reader.IsDBNull("DueDate") ? null : reader.GetDateTime(reader.GetOrdinal("DueDate")),
-                    IsCompleted = reader.GetBoolean("IsCompleted")
+                using var command = new SqlCommand("GetTasks", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
                 };
-                tasks.Add(dto);
+
+                using var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    var dto = new TaskDto
+                    {
+                        Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                        CreationDate = reader.GetDateTime(reader.GetOrdinal("CreationDate")),
+                        Description = reader.GetString(reader.GetOrdinal("Description")),
+                        DueDate = reader.IsDBNull("DueDate") ? null : reader.GetDateTime(reader.GetOrdinal("DueDate")),
+                        IsCompleted = reader.GetBoolean("IsCompleted")
+                    };
+                    tasks.Add(dto);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error: {ex.Message}");
             }
 
             return tasks;
+        }
+
+        public bool AddTask(TaskDto dto)
+        {
+            try
+            {
+                using var connection = new SqlConnection(ConnectionString);
+                connection.Open();
+
+                using var command = new SqlCommand("AddTask", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                // make so it's no longer nullable if there is a due date
+                DateTime finalDueDate = dto.DueDate ?? DateTime.Now;
+
+                command.Parameters.AddWithValue("@Description", dto.Description);
+                command.Parameters.AddWithValue("@DueDate", dto.DueDate != null ? DateOnly.FromDateTime(finalDueDate) : null);
+
+                return command.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error adding product: {ex.Message}");
+                return false;
+            }
+
         }
     }
 }

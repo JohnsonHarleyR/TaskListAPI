@@ -22,5 +22,11 @@ namespace TaskListAPI.Controllers
         {
             return orchestrator.GetAllTasks();
         }
+
+        [HttpPost]
+        public bool AddTask(TaskModel task)
+        {
+            return orchestrator.AddTask(task);
+        }
     }
 }
