@@ -28,5 +28,17 @@ namespace TaskListAPI.Controllers
         {
             return orchestrator.AddTask(task);
         }
+
+        [HttpPut("{id}")]
+        public bool UpdateTask(TaskModel task)
+        {
+            return orchestrator.UpdateTask(task);
+        }
+
+        [HttpDelete("{id}")]
+        public bool DeleteTask(int id)
+        {
+            return orchestrator.DeleteTask(id);
+        }
     }
 }

@@ -81,5 +81,52 @@ namespace TaskList.Data.Repositories
             }
 
         }
-    }
+
+        public bool UpdateTask(TaskDto dto)
+        {
+            try
+            {
+                using var connection = new SqlConnection(ConnectionString);
+                connection.Open();
+
+                using var command = new SqlCommand("UpdateTask", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                // make so it's no longer nullable if there is a due date
+                DateTime finalDueDate = dto.DueDate ?? DateTime.Now;
+
+                command.Parameters.AddWithValue("@Id", dto.Id);
+                command.Parameters.AddWithValue("@Description", dto.Description);
+                command.Parameters.AddWithValue("@DueDate", dto.DueDate != null ? DateOnly.FromDateTime(dto.DueDate.Value) : null);
+                command.Parameters.AddWithValue("@IsCompleted", dto.IsCompleted);
+                return command.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool DeleteTask(int id)
+        {
+            try
+            {
+                using var connection = new SqlConnection(ConnectionString);
+                connection.Open();
+                using var command = new SqlCommand("DeleteTask", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                command.Parameters.AddWithValue("@Id", id);
+                return command.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
 }

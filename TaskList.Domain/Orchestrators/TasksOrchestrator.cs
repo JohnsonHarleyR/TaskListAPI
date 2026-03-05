@@ -49,5 +49,23 @@ namespace TaskList.Domain.Orchestrators
             };
             return repository.AddTask(taskDto);
         }
+
+        public bool UpdateTask(TaskModel taskModel)
+        {
+            TaskDto taskDto = new TaskDto
+            {
+                Id = taskModel.Id,
+                CreationDate = taskModel.CreationDate,
+                Description = taskModel.Description.Trim().Length <= 255 ? taskModel.Description.Trim() : taskModel.Description.Trim().Substring(0, 255),
+                DueDate = taskModel.DueDate,
+                IsCompleted = taskModel.IsCompleted
+            };
+            return repository.UpdateTask(taskDto);
+        }
+
+        public bool DeleteTask(int id)
+        {
+            return repository.DeleteTask(id);
+        }
     }
 }
